@@ -15,17 +15,7 @@ using System.Windows.Shapes;
 
 namespace Subtitle_Displayer_Project
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    class SubtitleDisplayer
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-
-        }
-
-        
     }
 }

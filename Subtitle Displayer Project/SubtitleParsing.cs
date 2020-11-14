@@ -15,17 +15,14 @@ using System.Windows.Shapes;
 
 namespace Subtitle_Displayer_Project
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    class SubtitleParsing
     {
-        public MainWindow()
+        public List<Str> Subtitles;
+        public async Task<List<Str>> Parsing()
         {
-            InitializeComponent();
-
+            Subtitles = new List<Str>();
+            
+            return Subtitles;
         }
-
-        
     }
 }

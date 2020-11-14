@@ -15,17 +15,18 @@ using System.Windows.Shapes;
 
 namespace Subtitle_Displayer_Project
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    class Str
     {
-        public MainWindow()
+        public int Number;
+        public string FirstDate;
+        public string SecondtDate;
+        public string Content;
+        public Str(int number, string firstDate, string secondDate, string content)
         {
-            InitializeComponent();
-
+            Number = number;
+            FirstDate = firstDate;
+            SecondtDate = secondDate;
+            Content = content;
         }
-
-        
     }
 }
