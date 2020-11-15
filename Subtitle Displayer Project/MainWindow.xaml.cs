@@ -25,8 +25,12 @@ namespace Subtitle_Displayer_Project
             InitializeComponent();
             ConsoleAllocator.ShowConsoleWindow();
 
-            SubtitleParsing s = new SubtitleParsing();
-            Task t = s.Parsing();
+            SubtitleParsing p = new SubtitleParsing();
+            SubtitleDisplayer d = new SubtitleDisplayer();
+
+            Task<List<Str>> parsingTask = p.Parsing();
+            List<Str> subtitles = parsingTask.Result;
+            Task displayTask = d.Displayer(subtitles);
 
         }
 
