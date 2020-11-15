@@ -17,9 +17,5 @@ namespace Subtitle_Displayer_Project
 {
     class SubtitleDisplayer
     {
-        public async Task Displayer(List<Str> Subtitles)
-        {
-            List<Str> subtitles = Subtitles;
-        }
     }
 }
