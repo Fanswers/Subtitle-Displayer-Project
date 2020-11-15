@@ -53,7 +53,28 @@ namespace Subtitle_Displayer_Project
 
         public async Task StrToTab()
         {
+            List<string> strContent = await StrInList();
+            List<string> str = new List<string>();
+
+            for (int i = 0; i < strContent.Count; i++)
+            {
+                if (String.IsNullOrEmpty(strContent[i]) == false)
+                {
+                    str.Add(strContent[i]);
+                }
+                else
+                {
+                    await ParsingDate(str);
+                    str.Clear();
+                }
+            }
             
+        }
+
+        public async Task ParsingDate(List<string> str)
+        {
+            
+
         }
 
         public async Task AddInList()
