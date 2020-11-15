@@ -20,8 +20,8 @@ namespace Subtitle_Displayer_Project
         public int Number;
         public string FirstDate;
         public string SecondtDate;
-        public string Content;
-        public Str(int number, string firstDate, string secondDate, string content)
+        public string[] Content;
+        public Str(int number, string firstDate, string secondDate, string[] content)
         {
             Number = number;
             FirstDate = firstDate;
