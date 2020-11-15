@@ -23,6 +23,10 @@ namespace Subtitle_Displayer_Project
         public MainWindow()
         {
             InitializeComponent();
+            ConsoleAllocator.ShowConsoleWindow();
+
+            SubtitleParsing s = new SubtitleParsing();
+            Task t = s.Parsing();
 
         }
 
