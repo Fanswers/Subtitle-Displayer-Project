@@ -46,11 +46,14 @@ namespace Subtitle_Displayer_Project
                 {
                     strContent.Add(line);
                 }
+                strContent.Add(null);
             }
 
             return strContent;
         }
 
+
+        //Permet de mettre tout les élément d'un sous titre dans un tableau.
         public async Task StrToTab()
         {
             List<string> strContent = await StrInList();
@@ -64,22 +67,28 @@ namespace Subtitle_Displayer_Project
                 }
                 else
                 {
-                    await ParsingDate(str);
+                    await AddInList(str);
                     str.Clear();
                 }
             }
             
         }
 
-        public async Task ParsingDate(List<string> str)
+        public async Task AddInList(List<string> str)
         {
-            
+            List<string> strContent = str;
 
-        }
+            int number = int.Parse(strContent[0]);
+            string firstDate = strContent[1].Substring(0, 12);
+            string secondDate = strContent[1].Substring(17);
+            List<string> content = new List<string>();
 
-        public async Task AddInList()
-        {
+            for (int i = 2; i < strContent.Count; i++)
+            {
+                content.Add(strContent[i]);
+            }
 
+            Subtitles.Add(new Str(number, firstDate, secondDate, content));
         }
     }
 }
