@@ -30,7 +30,7 @@ namespace Subtitle_Displayer_Project
 
             Task<List<Str>> parsingTask = p.Parsing();
             List<Str> subtitles = parsingTask.Result;
-            Task displayTask = d.Displayer(subtitles);
+            d.Displayer(subtitles);
 
         }
 
