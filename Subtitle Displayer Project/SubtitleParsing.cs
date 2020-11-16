@@ -25,6 +25,7 @@ namespace Subtitle_Displayer_Project
         public async Task<List<Str>> Parsing()
         {
             Subtitles = new List<Str>();
+            Subtitles.Add(new Str(0, null, "00:00:00,000", null));
 
             StrToTab();
 
@@ -41,7 +42,6 @@ namespace Subtitle_Displayer_Project
             using (StreamReader sr = new StreamReader(mydocpath + @"\testsrt\Chris Brown - Forever.srt"))
             {
                 string line;
-                int i = 0;
                 while ((line = sr.ReadLine()) != null)
                 {
                     strContent.Add(line);
