@@ -31,14 +31,20 @@ namespace Subtitle_Displayer_Project
                 DateTime date3 = DateTime.ParseExact(subtitles[i].SecondtDate, "HH:mm:ss,fff",
                                        System.Globalization.CultureInfo.InvariantCulture);
 
-                Display(date2.Subtract(date1), date3.Subtract(date2), subtitles[i].Content);
+                Console.WriteLine("");
+                await Task.Delay(date2.Subtract(date1));
+                Display(subtitles[i].Content);
+                await Task.Delay(date3.Subtract(date2));
             }
         }
 
         //Permet d'afficher les sous titres
-        public async Task Display(TimeSpan time1, TimeSpan time2, List<string> content)
+        public async Task Display(List<string> content)
         {
-
+            for (int i = 0; i < content.Count; i++)
+            {
+                Console.WriteLine(content[i]);
+            }
         }
     }
 }
