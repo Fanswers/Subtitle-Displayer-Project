@@ -25,7 +25,10 @@ namespace Subtitle_Displayer_Project
         public async Task<List<Str>> Parsing()
         {
             Subtitles = new List<Str>();
-            Subtitles.Add(new Str(0, null, "00:00:00,000", null));
+            DateTime date1 = DateTime.ParseExact("00:00:00,000", "HH:mm:ss,fff",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+
+            Subtitles.Add(new Str(0, date1, date1, null));
 
             StrToTab();
 
@@ -71,24 +74,30 @@ namespace Subtitle_Displayer_Project
                     str.Clear();
                 }
             }
-            
         }
 
+        //Permet d'ajouter chaque sous titres dans la liste principal sous forme d'objet Str
         public async Task AddInList(List<string> str)
         {
             List<string> strContent = str;
 
             int number = int.Parse(strContent[0]);
-            string firstDate = strContent[1].Substring(0, 12);
-            string secondDate = strContent[1].Substring(17);
-            List<string> content = new List<string>();
+            DateTime date1 = DateTime.ParseExact(strContent[1].Substring(0, 12), "HH:mm:ss,fff",
+                System.Globalization.CultureInfo.InvariantCulture);
+            DateTime date2 = DateTime.ParseExact(strContent[1].Substring(17), "HH:mm:ss,fff",
+                System.Globalization.CultureInfo.InvariantCulture);
+            string content = "";
 
             for (int i = 2; i < strContent.Count; i++)
             {
-                content.Add(strContent[i]);
+                if (i == 2)
+                    content = strContent[i];
+                else
+                    content += System.Environment.NewLine + strContent[i]; ;
+
             }
 
-            Subtitles.Add(new Str(number, firstDate, secondDate, content));
+            Subtitles.Add(new Str(number, date1, date2, content));
         }
     }
 }
