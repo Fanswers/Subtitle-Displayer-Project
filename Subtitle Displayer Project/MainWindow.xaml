@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Subtitle_Displayer_Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*">
-
+                
             </RowDefinition>
             <RowDefinition Height="1*">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="SubtitleTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="TextBlock" TextWrapping="Wrap" Grid.Row="1"/>
+        
+        <TextBlock x:Name="SubtitleTB" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="TextBlock" TextWrapping="Wrap" Grid.Row="1"/>
     </Grid>
 </Window>

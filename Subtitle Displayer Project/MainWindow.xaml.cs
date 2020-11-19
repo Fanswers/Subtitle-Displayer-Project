@@ -37,9 +37,9 @@ namespace Subtitle_Displayer_Project
             for (int i = 1; i < subtitles.Count; i++)
             {
                 Console.WriteLine("");
-                this.SubtitleTextBlock.Text = "";
+                this.SubtitleTB.Text = "";
                 await Task.Delay(subtitles[i].FirstDate.Subtract(subtitles[i - 1].SecondDate));
-                this.SubtitleTextBlock.Text = subtitles[i].Content;
+                this.SubtitleTB.Text = subtitles[i].Content;
                 await Task.Delay(subtitles[i].SecondDate.Subtract(subtitles[i].FirstDate));
             }
         }
