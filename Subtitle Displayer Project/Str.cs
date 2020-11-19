@@ -18,14 +18,15 @@ namespace Subtitle_Displayer_Project
     class Str
     {
         public int Number;
-        public string FirstDate;
-        public string SecondtDate;
-        public List<string> Content;
-        public Str(int number, string firstDate, string secondDate, List<string> content)
+        public DateTime FirstDate;
+        public DateTime SecondDate;
+        //public List<string> Content;
+        public string Content;
+        public Str(int number, DateTime firstDate, DateTime secondDate, string content)
         {
             Number = number;
             FirstDate = firstDate;
-            SecondtDate = secondDate;
+            SecondDate = secondDate;
             Content = content;
         }
     }
