@@ -24,7 +24,7 @@ namespace Subtitle_Displayer_Project
         {
             InitializeComponent();
             ConsoleAllocator.ShowConsoleWindow();
-            Displayer();
+            VideoDisplayer();
         }
 
         public async Task Displayer()
@@ -53,6 +53,13 @@ namespace Subtitle_Displayer_Project
             }
         }
 
-
+        public async Task VideoDisplayer()
+        {
+            this.VideoME.Play();
+            var tsc = new TaskCompletionSource<bool>();
+            this.VideoME.MediaOpened += (o, e) => { tsc.TrySetResult(true); };
+            await tsc.Task;
+            Displayer();
+        }
     }
 }

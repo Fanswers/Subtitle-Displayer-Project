@@ -9,12 +9,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*">
-                
             </RowDefinition>
             <RowDefinition Height="1*">
             </RowDefinition>
         </Grid.RowDefinitions>
-        
+        <MediaElement x:Name="VideoME" HorizontalAlignment="Center" VerticalAlignment="Center" Source="C:\Users\alexi\Videos\chris-brown-forever-official-video.wmv" LoadedBehavior="Manual" Grid.Row="0"></MediaElement>
         <TextBlock x:Name="SubtitleTB" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="TextBlock" TextWrapping="Wrap" Grid.Row="1"/>
     </Grid>
 </Window>
