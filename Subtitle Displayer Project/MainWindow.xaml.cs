@@ -21,8 +21,6 @@ namespace Subtitle_Displayer_Project
         public MainWindow()
         {
             InitializeComponent();
-            ConsoleAllocator.ShowConsoleWindow();
-            
         }
 
         //permet de recupérer le chemin des fichiers
