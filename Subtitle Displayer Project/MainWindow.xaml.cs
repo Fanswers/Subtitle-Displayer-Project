@@ -48,20 +48,10 @@ namespace Subtitle_Displayer_Project
 
             for (int i = 1; i < subtitles.Count; i++)
             {
-                Console.WriteLine("");
                 this.SubtitleTB.Text = "";
                 await Task.Delay(subtitles[i].FirstDate.Subtract(subtitles[i - 1].SecondDate));
                 this.SubtitleTB.Text = subtitles[i].Content;
                 await Task.Delay(subtitles[i].SecondDate.Subtract(subtitles[i].FirstDate));
-            }
-        }
-
-        //Permet d'afficher les sous titres
-        public async Task Display(List<string> content)
-        {
-            for (int i = 0; i < content.Count; i++)
-            {
-                Console.WriteLine(content[i]);
             }
         }
 
