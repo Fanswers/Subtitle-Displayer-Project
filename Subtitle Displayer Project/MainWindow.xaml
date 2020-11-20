@@ -8,12 +8,13 @@
         Title="MainWindow" SizeToContent="WidthAndHeight">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="4*">
+            <RowDefinition Height="*">
             </RowDefinition>
-            <RowDefinition Height="1*">
+            <RowDefinition Height="*">
             </RowDefinition>
         </Grid.RowDefinitions>
-        <MediaElement x:Name="VideoME" HorizontalAlignment="Center" VerticalAlignment="Center" Source="C:\Users\alexi\Videos\chris-brown-forever-official-video.wmv" LoadedBehavior="Manual" Grid.Row="0"></MediaElement>
-        <TextBlock x:Name="SubtitleTB" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="TextBlock" TextWrapping="Wrap" Grid.Row="1"/>
+        <Button x:Name="SubtitlePathButton" Click="GetFilePath" HorizontalAlignment="Center" VerticalAlignment="top" Grid.Row="0">File</Button>
+        <MediaElement x:Name="VideoME" HorizontalAlignment="Center" VerticalAlignment="Bottom" Source="" LoadedBehavior="Manual" Grid.Row="0"></MediaElement>
+        <TextBlock x:Name="SubtitleTB" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1"></TextBlock>
     </Grid>
 </Window>
