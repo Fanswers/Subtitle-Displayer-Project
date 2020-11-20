@@ -22,7 +22,7 @@ namespace Subtitle_Displayer_Project
 
 
         //Permet de lancer le parsing
-        public async Task<List<Str>> Parsing()
+        public async Task<List<Str>> Parsing(string SubtitlePath)
         {
             Subtitles = new List<Str>();
             DateTime date1 = DateTime.ParseExact("00:00:00,000", "HH:mm:ss,fff",
@@ -30,19 +30,18 @@ namespace Subtitle_Displayer_Project
 
             Subtitles.Add(new Str(0, date1, date1, null));
 
-            StrToTab();
+            StrToTab(SubtitlePath);
 
             return Subtitles;
         }
 
 
         //Permet d'insérer chaque ligne du fichier .str séparemment dans la liste 'strContent'
-        public async Task<List<string>> StrInList() 
+        public async Task<List<string>> StrInList(string SubtitlePath) 
         {
             List<string> strContent = new List<string>();
-            string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            using (StreamReader sr = new StreamReader(mydocpath + @"\testsrt\Chris Brown - Forever.srt"))
+            using (StreamReader sr = new StreamReader(SubtitlePath))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -57,9 +56,9 @@ namespace Subtitle_Displayer_Project
 
 
         //Permet de mettre tout les élément d'un sous titre dans un tableau.
-        public async Task StrToTab()
+        public async Task StrToTab(string SubtitlePath)
         {
-            List<string> strContent = await StrInList();
+            List<string> strContent = await StrInList(SubtitlePath);
             List<string> str = new List<string>();
 
             for (int i = 0; i < strContent.Count; i++)
